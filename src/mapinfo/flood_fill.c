@@ -6,7 +6,7 @@
 /*   By: mgolubev <mgolubev@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/05 09:27:28 by mgolubev      #+#    #+#                 */
-/*   Updated: 2025/02/24 19:38:44 by mgolubev      ########   odam.nl         */
+/*   Updated: 2025/02/24 20:07:00 by mgolubev      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,9 @@ int	flood_fill(t_map *map, t_vec2 pos)
 	int		status;
 
 	status = MAPINFO_SUCCESS;
-	if (pos.x < 1 || pos.y < 1 || pos.x >= map->width - 1
-		|| pos.y >= map->height - 1 || queue_init(&queue, map->width
+	if (pos.x < 0 || pos.y < 0 || pos.x >= map->width || pos.y >= map->height)
+		return (MAPINFO_MAP_FLOOD_FILL_ERROR);
+	if (queue_init(&queue, map->width
 			* map->height) != 0)
 		return (MAPINFO_MALLOC_ERROR);
 	visited = ft_calloc(map->width * map->height, sizeof(int));
