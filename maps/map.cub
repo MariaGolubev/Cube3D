@@ -1,0 +1,12 @@
+SO ./maps/green.png
+NO ./maps/red.png
+WE		./maps/purple.png
+EA ./maps/ksoedama.png
+C 	    0,   0,255
+
+F 0,255,0
+
+
+1111
+1010
+1111
